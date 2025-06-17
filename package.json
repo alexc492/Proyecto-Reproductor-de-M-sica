@@ -1,0 +1,26 @@
+{
+  "name": "proyecto-reproductor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexc492/Proyecto-Reproductor-de-M-sica.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexc492/Proyecto-Reproductor-de-M-sica/issues"
+  },
+  "homepage": "https://github.com/alexc492/Proyecto-Reproductor-de-M-sica#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "typescript": "^5.8.3"
+  }
+}
