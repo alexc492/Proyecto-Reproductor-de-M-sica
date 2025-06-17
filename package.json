@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node server/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server.js",
+    "type": "commonjs"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,13 @@
   },
   "homepage": "https://github.com/alexc492/Proyecto-Reproductor-de-M-sica#readme",
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "lite-server": "^2.6.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
