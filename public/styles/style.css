@@ -9,3 +9,21 @@ body {
   font-size: 1.5rem;
   padding: 10px;
 }
+
+.playing {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  font-weight: bold;
+  border: 2px solid #0f5132;
+}
+
+#time-info {
+  margin-top: 10px;
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+#progress-bar {
+  width: 100%;
+  margin: 10px 0;
+}
