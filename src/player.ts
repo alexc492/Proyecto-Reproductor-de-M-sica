@@ -1,5 +1,5 @@
 import { Track } from './track.js';
-import { Playlist } from './playlist.js';
+import { Playlist } from './playlist';
 
 export class Player {
   private audio: HTMLAudioElement = new Audio();
@@ -79,5 +79,4 @@ export class Player {
   onTimeUpdate(callback: () => void): void {
     this.audio.addEventListener('timeupdate', callback);
   }
-
 }

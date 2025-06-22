@@ -38,7 +38,8 @@ export class Playlist {
 
   getPreviousTrack(): Track | null {
     if (this.tracks.length === 0) return null;
-    const prevIndex = (this.currentIndex - 1 + this.tracks.length) % this.tracks.length;
+    const prevIndex =
+      (this.currentIndex - 1 + this.tracks.length) % this.tracks.length;
     return this.tracks[prevIndex] || null;
   }
 
@@ -50,7 +51,8 @@ export class Playlist {
 
   previous(): Track | null {
     if (this.tracks.length === 0) return null;
-    this.currentIndex = (this.currentIndex - 1 + this.tracks.length) % this.tracks.length;
+    this.currentIndex =
+      (this.currentIndex - 1 + this.tracks.length) % this.tracks.length;
     return this.getCurrentTrack();
   }
 

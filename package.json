@@ -1,14 +1,18 @@
 {
   "name": "proyecto-reproductor",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "dev": "ts-node server/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node dist/server.js",
-    "type": "commonjs"
+    "type": "commonjs",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,css,html}\""
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,18 @@
   "homepage": "https://github.com/alexc492/Proyecto-Reproductor-de-M-sica#readme",
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "jest": "^30.0.2",
+    "jest-environment-jsdom": "^30.0.2",
     "lite-server": "^2.6.1",
     "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },

@@ -3,6 +3,6 @@ export class Track {
     public title: string,
     public artist: string,
     public src: string,
-    public duration: number
+    public duration: number,
   ) {}
 }

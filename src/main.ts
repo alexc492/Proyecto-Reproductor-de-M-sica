@@ -4,19 +4,31 @@ import { Track } from './track.js';
 async function loadTracks(): Promise<Track[]> {
   const res = await fetch('/api/tracks');
   const data = await res.json();
-  console.log("Canciones cargadas:", data);
-  return data.map((item: any) => new Track(item.title, item.artist, item.src, item.duration));
+  console.log('Canciones cargadas:', data);
+  return data.map(
+    (item: any) => new Track(item.title, item.artist, item.src, item.duration),
+  );
 }
 
 loadTracks().then((tracks) => {
-  console.log("Tracks en el reproductor:", tracks);
+  console.log('Tracks en el reproductor:', tracks);
   const player = new Player(tracks);
 
-  document.getElementById('play')?.addEventListener('click', () => player.play());
-  document.getElementById('pause')?.addEventListener('click', () => player.pause());
-  document.getElementById('stop')?.addEventListener('click', () => player.stop());
-  document.getElementById('next')?.addEventListener('click', () => player.next());
-  document.getElementById('prev')?.addEventListener('click', () => player.prev());
+  document
+    .getElementById('play')
+    ?.addEventListener('click', () => player.play());
+  document
+    .getElementById('pause')
+    ?.addEventListener('click', () => player.pause());
+  document
+    .getElementById('stop')
+    ?.addEventListener('click', () => player.stop());
+  document
+    .getElementById('next')
+    ?.addEventListener('click', () => player.next());
+  document
+    .getElementById('prev')
+    ?.addEventListener('click', () => player.prev());
   document.getElementById('volume')?.addEventListener('input', (e) => {
     const input = e.target as HTMLInputElement;
     player.setVolume(parseFloat(input.value));
@@ -25,7 +37,7 @@ loadTracks().then((tracks) => {
   const playlistContainer = document.getElementById('playlist');
   if (playlistContainer) {
     const buttons: HTMLButtonElement[] = [];
-  
+
     tracks.forEach((track, index) => {
       const btn = document.createElement('button');
       btn.textContent = `${track.title} - ${track.artist}`;
@@ -36,7 +48,7 @@ loadTracks().then((tracks) => {
       playlistContainer.appendChild(btn);
       buttons.push(btn);
     });
-  
+
     function updateActiveTrack(activeIndex: number) {
       buttons.forEach((btn, i) => {
         if (i === activeIndex) {
@@ -46,7 +58,7 @@ loadTracks().then((tracks) => {
         }
       });
     }
-  
+
     // Actualizar visual al cambiar con next/prev
     const originalPlay = player.play.bind(player);
     player.play = () => {
@@ -72,7 +84,9 @@ loadTracks().then((tracks) => {
     }
   });
 
-  const progressBar = document.getElementById('progress-bar') as HTMLInputElement;
+  const progressBar = document.getElementById(
+    'progress-bar',
+  ) as HTMLInputElement;
 
   player.onTimeUpdate(() => {
     if (progressBar) {
@@ -85,6 +99,4 @@ loadTracks().then((tracks) => {
   progressBar?.addEventListener('input', () => {
     player.seek(parseFloat(progressBar.value));
   });
-
-
 });

@@ -1,0 +1,21 @@
+name: Run Project Tests
+run-name: Run Project Tests
+on: [push]
+
+jobs:
+  test:
+    runs-on: [self-hosted]
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm run test
