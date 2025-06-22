@@ -9,7 +9,7 @@ jobs:
       - name: Limpiar el directorio de trabajo (opcional)
         run: |
             Remove-Item -Path "${{ github.workspace }}\*" -Recurse -Force -ErrorAction SilentlyContinue
-        shell: pwsh
+        shell: pws
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
