@@ -6,10 +6,6 @@ jobs:
   lint:
     runs-on: [self-hosted]
     steps:
-      - name: Limpiar el directorio de trabajo (opcional)
-        run: |
-            Remove-Item -Path "${{ github.workspace }}\*" -Recurse -Force -ErrorAction SilentlyContinue
-        shell: pwsh
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
